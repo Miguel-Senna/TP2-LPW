@@ -13,11 +13,22 @@ window.addEventListener('scroll', () => {
 })
 
 getId("#level").addEventListener('input', (e) => {
-	getId("#game-link").href = `game.html?level=${getId("#level").value}&weapon=${getId("#weapon").value}`
+	getId("#game-link").href = `game.html?level=${getId("#level").value}&weapon=${getId("#weapon").value}`;
 });
 getId("#weapon").addEventListener('input', (e) => {
-	getId("#game-link").href = `game.html?level=${getId("#level").value}&weapon=${getId("#weapon").value}`
+	getId("#game-link").href = `game.html?level=${getId("#level").value}&weapon=${getId("#weapon").value}`;
 });
+
+const titleEl = getId("#top-bar h2");
+const authorsModalEl = getId("#authors")
+
+authorsModalEl.addEventListener('click', (e) => {
+	authorsModalEl.close();
+})
+
+titleEl.addEventListener('click', (e) => {
+	authorsModalEl.showModal();
+})
 
 // const welcomeTextEl = getId('#log-in-menu h1');
 
@@ -56,7 +67,7 @@ function showLoggedIn(username) {
 	authSection.hidden = true;
 	gameSection.hidden = false;
 	
-	getId("#game-link").href = `/game.html?level=${getId("#level").value}&weapon=${getId("#weapon").value}`
+	getId("#game-link").href = `/game.html?level=${getId("#level").value}&weapon=${getId("#weapon").value}`;
 }
 
 function showLoggedOut() {
@@ -71,10 +82,10 @@ getId("#register-btn").addEventListener("click", async () => {
 			username: getId("#username-reg").value,
 			password: getId("#password-reg").value,
 		});
-		console.log("user registered")
-		getId("#new-account-prompt").open = true
+		console.log("user registered");
+		getId("#new-account-prompt").open = true;
 	} catch (err) {
-		console.log(err.message)
+		console.log(err.message);
 	}
 });
 

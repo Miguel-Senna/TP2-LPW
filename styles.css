@@ -109,6 +109,10 @@ body {
             position: absolute;
             top: 6px;
             margin: 0;
+            &:hover {
+                text-decoration: underline;
+                cursor: pointer;
+            }
         }
         #new-account {
             position: fixed;
@@ -141,6 +145,7 @@ body {
             }
         }
         dialog {
+            color: white;
             width: 15vw;
             border-radius: 10px;
             border-width: 2px;
@@ -153,6 +158,37 @@ body {
                 top: 15px;
                 right: 15px;
                 height: 4px;
+            }
+        }
+        #authors {
+            position: relative;
+            width: 40em;
+            h1 {
+                text-align: center;
+            }
+            p {
+                position: absolute;
+                bottom: 53px;
+                padding-left: 2px;
+                padding-right: 10px;
+
+                img {
+                    border-radius: 50%;
+                    transform: translateY(65px);
+                }
+            }
+            a {
+                border: none;
+                color: white;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+
+            }
+            &::backdrop {
+                background-color: #000000af;
             }
         }
     }

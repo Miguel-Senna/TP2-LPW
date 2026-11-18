@@ -2,7 +2,7 @@ import { defineConfig } from "vite";
 import { resolve } from "node:path";
 
 export default defineConfig({
-  base: "/Trabalho-TP2-LPW/",
+  base: process.env.GITHUB_ACTIONS ? "/TP2-LPW/" : "/",
   build: {
     rollupOptions: {
       input: {
